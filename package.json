@@ -1,0 +1,31 @@
+{
+  "name": "land-verification-and-transfer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "npx hardhat run scripts/check-and-deploy.js --network localhost",
+    "restore-state": "npx hardhat run scripts/restore-dev-state.js --network localhost",
+    "verify-persistence": "npx hardhat run scripts/verify-persistence.js --network localhost",
+    "start-node": "npx hardhat node",
+    "register-admin": "node register-admin.js",
+    "full-start": "npm run deploy && npm run start-node",
+    "restart-system": "npm run deploy && npm run restore-state",
+    "setup-system": "npm run deploy && npm run register-admin"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.1.0",
+    "@nomicfoundation/hardhat-ethers": "^4.0.4",
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "chai": "^6.2.2",
+    "ethers": "^6.16.0",
+    "hardhat": "^2.22.5"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.4.0"
+  }
+}
